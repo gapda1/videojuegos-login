@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Registro de usuario</title>
+    <style>
+        body { font-family: Arial; background: #eef2f7; }
+        .contenedor {
+            width: 350px;
+            margin: 80px auto;
+            padding: 30px;
+            background: white;
+            border-radius: 12px;
+        }
+        input { width: 100%; padding: 10px; margin: 10px 0; box-sizing: border-box; }
+        button { background: #16a34a; color: white; padding: 12px; border: 0; width: 100%; }
+        .mensaje { color: #b91c1c; }
+    </style>
+</head>
+<body>
+    <div class="contenedor">
+        <h2>Crear cuenta</h2>
+
+        {% with mensajes = get_flashed_messages(with_categories=true) %}
+            {% for categoria, mensaje in mensajes %}
+                <p class="mensaje">{{ mensaje }}</p>
+            {% endfor %}
+        {% endwith %}
+
+        <form method="POST">
+            {{ form.hidden_tag() }}
+
+            <label>Usuario</label>
+            {{ form.username() }}
+
+            <label>Contraseña</label>
+            {{ form.password() }}
+
+            <label>Confirmar contraseña</label>
+            {{ form.confirmar() }}
+
+            {{ form.submit(style="width:100%; padding:12px;") }}
+        </form>
+
+        <p><a href="{{ url_for('auth.login') }}">Volver al inicio de sesión</a></p>
+    </div>
+</body>
+</html>

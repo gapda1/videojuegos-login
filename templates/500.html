@@ -1,0 +1,29 @@
+
+{% extends "base.html" %}
+
+{% block title %}Error 500 - Error interno{% endblock %}
+
+{% block content %}
+
+<h1>500 - Error interno del servidor</h1>
+
+<h2>¡Ups! Ocurrió un problema inesperado.</h2>
+
+<p>
+    Nuestro servidor encontró un error
+    al procesar tu solicitud.
+</p>
+
+<p>
+    Por favor, inténtalo nuevamente más tarde.
+</p>
+
+<p>
+    Error HTTP: 500 Internal Server Error
+</p>
+
+<a href="{{ url_for('inicio') }}" class="boton">
+    Volver al inicio
+</a>
+
+{% endblock %}

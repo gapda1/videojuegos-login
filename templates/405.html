@@ -1,0 +1,30 @@
+
+{% extends "base.html" %}
+
+{% block title %}Error 405 - Método no permitido{% endblock %}
+
+{% block content %}
+
+<h1>405 - Método no permitido</h1>
+
+<h2>¡Ups! Esta operación no está permitida.</h2>
+
+<p>
+    El método HTTP utilizado no está permitido
+    para la dirección solicitada.
+</p>
+
+<p>
+    Verifica la operación que intentas realizar
+    e inténtalo nuevamente.
+</p>
+
+<p>
+    Error HTTP: 405 Method Not Allowed
+</p>
+
+<a href="{{ url_for('inicio') }}" class="boton">
+    Volver al inicio
+</a>
+
+{% endblock %}

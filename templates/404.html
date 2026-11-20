@@ -1,0 +1,29 @@
+
+{% extends "base.html" %}
+
+{% block title %}Error 404 - Página no encontrada{% endblock %}
+
+{% block content %}
+
+<h1>404 - Página no encontrada</h1>
+
+<h2>¡Ups! No encontramos lo que buscas.</h2>
+
+<p>
+    La página que intentas visitar no existe
+    o la dirección es incorrecta.
+</p>
+
+<p>
+    Verifica la URL e inténtalo nuevamente.
+</p>
+
+<p>
+    Error HTTP: 404 Not Found
+</p>
+
+<a href="{{ url_for('inicio') }}" class="boton">
+    Volver al inicio
+</a>
+
+{% endblock %}

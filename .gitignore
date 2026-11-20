@@ -1,0 +1,17 @@
+
+venv/
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.coverage
+htmlcov/
+.env
+.env.*
+errors.log
+*.log
+dbPython.sql
+results.txt
+bd.py
+crudMysqlPython_V2_PyMysql.py
+api_tests.http

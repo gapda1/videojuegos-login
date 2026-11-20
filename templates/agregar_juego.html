@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Agregar videojuego</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background: #f4f6fa;
+        }
+
+        .contenedor {
+            max-width: 450px;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 8px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background: #2563eb;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        a {
+            color: #2563eb;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="contenedor">
+
+        <h1>Agregar videojuego</h1>
+
+        <form action="{{ url_for('guardar_juego') }}" method="POST">
+
+            <label>Nombre:</label>
+            <input type="text"
+                   name="nombre"
+                   maxlength="255"
+                   required>
+
+            <label>Descripción:</label>
+            <textarea name="descripcion"
+                      maxlength="255"
+                      required></textarea>
+
+            <label>Precio:</label>
+            <input type="number"
+                   name="precio"
+                   step="0.01"
+                   min="0"
+                   required>
+
+            <button type="submit">
+                Guardar videojuego
+            </button>
+
+        </form>
+
+        <p>
+            <a href="{{ url_for('juegos') }}">
+                Volver a videojuegos
+            </a>
+        </p>
+
+    </div>
+
+</body>
+</html>
